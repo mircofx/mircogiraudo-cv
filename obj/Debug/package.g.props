@@ -10,7 +10,7 @@
     <PackageJsonScriptsLint Condition="$(PackageJsonScriptsLint) == ''">eslint . --fix</PackageJsonScriptsLint>
     <PackageJsonScriptsServe Condition="$(PackageJsonScriptsServe) == ''">vue-cli-service serve</PackageJsonScriptsServe>
     <PackageJsonScriptsBuild Condition="$(PackageJsonScriptsBuild) == ''">vue-cli-service build</PackageJsonScriptsBuild>
-    <PackageJsonScriptsDeploy Condition="$(PackageJsonScriptsDeploy) == ''">main -d dist</PackageJsonScriptsDeploy>
+    <PackageJsonScriptsDeploy Condition="$(PackageJsonScriptsDeploy) == ''">gh-pages -d dist</PackageJsonScriptsDeploy>
     <PackageJsonDependenciesBootstrap Condition="$(PackageJsonDependenciesBootstrap) == ''">^5.3.3</PackageJsonDependenciesBootstrap>
     <PackageJsonDependenciesBootstrapVue3 Condition="$(PackageJsonDependenciesBootstrapVue3) == ''">^0.3.12</PackageJsonDependenciesBootstrapVue3>
     <PackageJsonDependenciesVue Condition="$(PackageJsonDependenciesVue) == ''">^3.5.13</PackageJsonDependenciesVue>

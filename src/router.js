@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 //These below are components
 import Home from './views/Home.vue'
@@ -35,7 +35,7 @@ const routes = [
 
 //Creation of router instance
 const router = createRouter({
-  history: createWebHistory(), //History mode to remove the hash in the URL
+  history: createWebHashHistory(), //History mode to remove the hash in the URL
   routes
 })
 

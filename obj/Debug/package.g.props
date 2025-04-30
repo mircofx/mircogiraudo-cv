@@ -12,11 +12,12 @@
     <PackageJsonScriptsBuild Condition="$(PackageJsonScriptsBuild) == ''">vue-cli-service build</PackageJsonScriptsBuild>
     <PackageJsonScriptsDeploy Condition="$(PackageJsonScriptsDeploy) == ''">gh-pages -d dist</PackageJsonScriptsDeploy>
     <PackageJsonDependenciesBootstrap Condition="$(PackageJsonDependenciesBootstrap) == ''">^5.3.3</PackageJsonDependenciesBootstrap>
-    <PackageJsonDependenciesBootstrapVue3 Condition="$(PackageJsonDependenciesBootstrapVue3) == ''">^0.5.1</PackageJsonDependenciesBootstrapVue3>
+    <PackageJsonDependenciesBootstrapVue3 Condition="$(PackageJsonDependenciesBootstrapVue3) == ''">^0.3.12</PackageJsonDependenciesBootstrapVue3>
     <PackageJsonDependenciesVue Condition="$(PackageJsonDependenciesVue) == ''">^3.5.13</PackageJsonDependenciesVue>
     <PackageJsonDependenciesVueRouter Condition="$(PackageJsonDependenciesVueRouter) == ''">^4.5.0</PackageJsonDependenciesVueRouter>
     <PackageJsonDevdependenciesEslintJs Condition="$(PackageJsonDevdependenciesEslintJs) == ''">^9.22.0</PackageJsonDevdependenciesEslintJs>
     <PackageJsonDevdependenciesVitejsPluginVue Condition="$(PackageJsonDevdependenciesVitejsPluginVue) == ''">^5.2.3</PackageJsonDevdependenciesVitejsPluginVue>
+    <PackageJsonDevdependenciesVueCliService Condition="$(PackageJsonDevdependenciesVueCliService) == ''">^5.0.8</PackageJsonDevdependenciesVueCliService>
     <PackageJsonDevdependenciesEslint Condition="$(PackageJsonDevdependenciesEslint) == ''">^9.22.0</PackageJsonDevdependenciesEslint>
     <PackageJsonDevdependenciesEslintPluginVue Condition="$(PackageJsonDevdependenciesEslintPluginVue) == ''">~10.0.0</PackageJsonDevdependenciesEslintPluginVue>
     <PackageJsonDevdependenciesGhPages Condition="$(PackageJsonDevdependenciesGhPages) == ''">^6.3.0</PackageJsonDevdependenciesGhPages>

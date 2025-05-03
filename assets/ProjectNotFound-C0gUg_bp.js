@@ -1,0 +1,1 @@
+import{_ as n,c as r,o as t,a as e}from"./index-8_B4m6ot.js";const c={};function l(s,o){return t(),r("div",null,o[0]||(o[0]=[e("h2",null,"Project not found",-1),e("p",null,"Sorry, we couldn't find the project you're looking for.",-1)]))}const u=n(c,[["render",l]]);export{u as default};

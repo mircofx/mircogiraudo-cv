@@ -3,8 +3,16 @@ import plugin from '@vitejs/plugin-vue';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    plugins: [plugin()],
-    server: {
-        port: 51253,
-    }
+  css: {
+    postcss: './postcss.config.cjs',
+  },
+  resolve: {
+    alias: {
+      '@': '/src',
+    },
+  },
+  plugins: [plugin()],
+  server: {
+    port: 51253,
+  }
 })

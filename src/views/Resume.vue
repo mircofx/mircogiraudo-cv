@@ -24,7 +24,7 @@
       <!-- Right column with Download CV button -->
       <div class="cv-right col-md-6 p-5 d-flex flex-column justify-content-start">
         <h2 class="title-text">RESUME</h2>
-        <a href="/path-to-your-cv.pdf" class="btn-resume" download>
+        <a href="/public/CV Mirco Giraudo (EN) 2025.pdf" class="btn-resume" download>
           Mirco Giraudo
         </a>
         <br />

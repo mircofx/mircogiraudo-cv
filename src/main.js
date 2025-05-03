@@ -4,8 +4,12 @@ import router from './router'; //Import all the defined routes
 
 // Other necessary imports like Bootstrap, etc.
 import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-vue-3/dist/bootstrap-vue-3.css';
 import BootstrapVue3 from 'bootstrap-vue-3';
+import './assets/tailwind.css'
+import './assets/main.css'
 
 const app = createApp(App);
 

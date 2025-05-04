@@ -1,0 +1,1 @@
+import{_ as n,c as r,o as t,b as e}from"./index-DEpcwnr3.js";const c={};function l(s,o){return t(),r("div",null,o[0]||(o[0]=[e("h2",null,"Project not found",-1),e("p",null,"Sorry, we couldn't find the project you're looking for.",-1)]))}const a=n(c,[["render",l]]);export{a as default};

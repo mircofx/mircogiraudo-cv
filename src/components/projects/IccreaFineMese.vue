@@ -1,46 +1,106 @@
-<!-- src/components/PortfolioMarketRiskMonitor.vue -->
+<!-- src/components/projects/IccreaFineMese.vue -->
 <template>
-
-  <div>
-    <h1>Portfolio Market Risk Monitor</h1>
-    <p>This project monitors banking portfolios and calculates rate risk and sensitivity.</p>
-    <!-- More details about the project -->
+  <div class="project-details">
+    <h1 class="project-title">Iccrea Fine Mese</h1>
+    <p class="project-subtitle">Simplify and speed up data collection and delivery during periodical portfolio valuation</p>
   </div>
 
-  <!-- Project Description -->
   <p class="project-description">
-    This project is about <strong>PORCO</strong>. It’s built using Vue.js and includes detailed information about the project's objectives, achievements, and the technologies used.
+    Iccrea Fine Mese is an automated reporting and data aggregation tool designed to support the monthly portfolio valuation process for mark-to-model assets. Its core function is to collect valuation data from diverse internal sources (including ABS, MREL, bonds, defaulted instruments, investment funds, AT1, and subordinated debt) ensuring complete and accurate pricing coverage.
+    <br><br>
+    The system integrates multiple inputs, consolidates price data and valuation deltas, and intelligently routes customized reports to the appropriate business units (e.g., Risk Management, Treasury, or Front Office), depending on asset type and internal responsibilities.
+    <br><br>
+    Iccrea Fine Mese performs the following key tasks:
+    <ul class="tech-list">
+      <li>Aggregates pricing and valuation data from multiple spreadsheets and valuation systems</li>
+      <li>Converts and standardizes outputs to CSV format for internal use that are securely uploaded into Sterling IBM B2B</li>
+      <li>Stores formatted Excel files with controlled structures and naming conventions</li>
+      <li>Automatically generates and dispatches emails including signature, recipient lists, and descriptive bodies tailored for each business line</li>
+    </ul>
+    <div class="project-description">By automating what was once a time-intensive and manual process, Fine Mese reduces operational risk and ensures consistent, timely delivery of critical valuation insights at month-end.</div>
   </p>
 
-  <!-- Technologies Used -->
   <h3>Technologies Used</h3>
   <ul class="tech-list">
     <li v-for="(tech, index) in technologies" :key="index">{{ tech }}</li>
   </ul>
 
-  <!-- Project Images or Demo Link -->
+  <h3>Statistics and Benchmarks</h3>
+  <ul class="tech-list">
+    <li>Lines of code: <strong>3168</strong></li>
+    <li>Users: <strong>MAQ team</strong></li>
+    <li>Time saved: <strong>&gt;95% =&gt; from 15-20 minutes (manual procedure) to &lt; 4 seconds</strong></li>
+  </ul>
+
   <div class="project-media">
     <h3>Project Media</h3>
-    <img v-if="projectImage" :src="projectImage" alt="Project Image" class="project-image" />
-    <a v-if="projectLink" :href="projectLink" class="project-link" target="_blank">Live Demo</a>
+    <img v-if="image" :src="image" alt="Project Image" class="project-image" style="max-width: 90%; padding-left: 10%;" />
+    <br>
+    <a v-if="link" :href="link" class="project-link" target="_blank">Live Demo</a>
   </div>
-
 </template>
 
 <script setup>
-  // Here, we mock a project object for demonstration purposes.
+  import finemese from '@/assets/projects/finemese.jpg'
+
   const projectDetails = {
-    "Portfolio Market Risk Monitor": {
-      description: "Developed a proprietary rate risk and sensitivity monitoring program for Banking portfolios.",
-      technologies: ["Vue.js", "Tailwind CSS", "Node.js", "Express"],
-      image: "/images/portfolio-market-risk.jpg", // Make sure you have the image file
-      link: "https://github.com/your-github/repository-link" // GitHub link or live demo
+    'Iccrea Fine Mese': {
+      technologies: ['Outlook Interop', 'HTML', 'C#', 'Excel Interop'],
+      image: finemese,
+      link: 'https://github.com/your-github/repository-link'
     }
-  };
+  }
 
-  // Get the project details for the selected project
-  const project = projectDetails[projectTitle] || {};
-
-  // Destructure project properties
-  const { description = '', technologies = [], image = '', link = '' } = project;
+  const { technologies, image, link } = projectDetails['Iccrea Fine Mese']
 </script>
+
+<style>
+  html, body {
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+
+  .project-description {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    color: #ddd;
+  }
+
+  .project-details {
+    padding: 70px 20px;
+    margin: 0 auto;
+    font-family: 'Arial', sans-serif;
+    max-width: 1200px;
+    width: 100%;
+  }
+
+  .project-title {
+    font-weight: 700;
+    font-size: 1.7rem;
+    color: #fff;
+    text-align: center;
+  }
+
+  .project-subtitle {
+    color: gray;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+  }
+
+  .tech-list {
+    margin-left: 25px;
+    list-style-type: disc;
+    padding-left: 2px;
+  }
+
+  .tech-list li {
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 0.2rem;
+    font-style: oblique;
+  }
+</style>

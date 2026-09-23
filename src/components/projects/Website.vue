@@ -50,7 +50,7 @@
            target="_blank"
            rel="noopener"
            class="github-link">
-          <img src="/logos/github.png" alt="GitHub" class="github-logo" />
+          <img :src="`${base}logos/github.png`" alt="GitHub" class="github-logo" />
           <span>View on GitHub</span>
         </a>
       </div>
@@ -59,12 +59,14 @@
 </template>
 
 <script setup>
+  const base = import.meta.env.BASE_URL
+
   const techLogos = [
-    { src: '/logos/vue.png', alt: 'Vue.js' },
-    { src: '/logos/bootstrap.png', alt: 'Bootstrap 5' },
-    { src: '/logos/js.png', alt: 'Typed.js' },
-    { src: '/logos/js.png', alt: 'Vue Router' },
-    { src: '/logos/css.png', alt: 'Scoped CSS' },
+    { src: `${base}logos/vue.png`, alt: 'Vue.js' },
+    { src: `${base}logos/bootstrap.png`, alt: 'Bootstrap 5' },
+    { src: `${base}logos/js.png`, alt: 'Typed.js' },
+    { src: `${base}logos/js.png`, alt: 'Vue Router' },
+    { src: `${base}logos/css.png`, alt: 'Scoped CSS' },
   ]
 </script>
 
@@ -156,6 +158,7 @@
 
   .tech-logo {
     width: 50px;
+    height: 50px;
     height: auto;
     filter: grayscale(100%) brightness(1.2);
     transition: transform 0.3s ease;

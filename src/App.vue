@@ -1,22 +1,24 @@
 <template>
-  <div id="app">
-    <Navbar />
-    <router-view /> <!-- This will render the page based on the current route -->
-  </div>
+  <Navbar />
+  <router-view /> <!-- This will render the page based on the current route -->
 </template>
 
 <script setup>
   import Navbar from './components/Navbar.vue'
 </script>
 
-<style scoped>
-  header {
-    line-height: 1.5;
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
   }
 
-  .logo {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  #app {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    font-family: 'Poppins', sans-serif;
   }
 </style>

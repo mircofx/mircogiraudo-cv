@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1400" width="1200" height="1400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1a2e"/>
+      <stop offset="0.55" stop-color="#1b1446"/>
+      <stop offset="1" stop-color="#3a1352"/>
+    </linearGradient>
+    <linearGradient id="bid" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0" stop-color="#22c55e"/>
+      <stop offset="1" stop-color="#22c55e" stop-opacity="0.15"/>
+    </linearGradient>
+    <linearGradient id="ask" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ef4444"/>
+      <stop offset="1" stop-color="#ef4444" stop-opacity="0.15"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="1400" fill="url(#bg)"/>
+
+  <!-- terminal window -->
+  <rect x="110" y="170" width="980" height="470" rx="14" fill="#000" opacity="0.92"/>
+  <rect x="110" y="170" width="980" height="46" rx="14" fill="#5f5f5f"/>
+  <rect x="110" y="200" width="980" height="16" fill="#5f5f5f"/>
+  <circle cx="145" cy="193" r="11" fill="#f97316"/>
+  <circle cx="180" cy="193" r="11" fill="#cfcfcf"/>
+  <circle cx="215" cy="193" r="11" fill="#cfcfcf"/>
+  <g font-family="Consolas, 'Courier New', monospace" font-size="25" fill="#e5e5e5">
+    <text x="140" y="265">$ ./itch-engine --mmap session.itch</text>
+    <text x="140" y="305">[feed] mmap, zero-copy ingest</text>
+    <text x="140" y="345">[spsc] parser -&gt; book ring online</text>
+    <text x="140" y="385">[book] per-instrument L3 books live</text>
+    <text x="140" y="425">[perf] 64.9M msgs @ <tspan fill="#f97316">3.8M msg/s</tspan></text>
+    <text x="140" y="465">[oracle] diff vs reference: <tspan fill="#22c55e">0 mismatches</tspan></text>
+    <text x="140" y="505">[done] session replay complete</text>
+    <text x="140" y="545">$ <tspan fill="#9ca3af">_</tspan></text>
+  </g>
+
+  <!-- order book ladder -->
+  <g font-family="Consolas, 'Courier New', monospace" font-size="24">
+    <text x="600" y="730" fill="#9ca3af" text-anchor="middle" letter-spacing="6">AAPL · L3 BOOK</text>
+    <line x1="600" y1="760" x2="600" y2="1260" stroke="#4b5563" stroke-width="2"/>
+
+    <rect x="330" y="770" width="260" height="40" fill="url(#bid)"/>
+    <rect x="410" y="820" width="180" height="40" fill="url(#bid)"/>
+    <rect x="370" y="870" width="220" height="40" fill="url(#bid)"/>
+    <rect x="460" y="920" width="130" height="40" fill="url(#bid)"/>
+    <rect x="300" y="970" width="290" height="40" fill="url(#bid)"/>
+    <rect x="440" y="1020" width="150" height="40" fill="url(#bid)"/>
+    <rect x="390" y="1070" width="200" height="40" fill="url(#bid)"/>
+    <rect x="480" y="1120" width="110" height="40" fill="url(#bid)"/>
+    <rect x="350" y="1170" width="240" height="40" fill="url(#bid)"/>
+    <rect x="430" y="1220" width="160" height="40" fill="url(#bid)"/>
+
+    <rect x="610" y="770" width="170" height="40" fill="url(#ask)"/>
+    <rect x="610" y="820" width="280" height="40" fill="url(#ask)"/>
+    <rect x="610" y="870" width="120" height="40" fill="url(#ask)"/>
+    <rect x="610" y="920" width="230" height="40" fill="url(#ask)"/>
+    <rect x="610" y="970" width="150" height="40" fill="url(#ask)"/>
+    <rect x="610" y="1020" width="300" height="40" fill="url(#ask)"/>
+    <rect x="610" y="1070" width="190" height="40" fill="url(#ask)"/>
+    <rect x="610" y="1120" width="140" height="40" fill="url(#ask)"/>
+    <rect x="610" y="1170" width="260" height="40" fill="url(#ask)"/>
+    <rect x="610" y="1220" width="100" height="40" fill="url(#ask)"/>
+
+    <g fill="#e5e5e5" font-size="22">
+      <text x="200" y="798">213.42</text><text x="200" y="848">213.41</text>
+      <text x="200" y="898">213.40</text><text x="200" y="948">213.39</text>
+      <text x="200" y="998">213.38</text><text x="200" y="1048">213.37</text>
+      <text x="200" y="1098">213.36</text><text x="200" y="1148">213.35</text>
+      <text x="200" y="1198">213.34</text><text x="200" y="1248">213.33</text>
+      <text x="930" y="798">213.43</text><text x="930" y="848">213.44</text>
+      <text x="930" y="898">213.45</text><text x="930" y="948">213.46</text>
+      <text x="930" y="998">213.47</text><text x="930" y="1048">213.48</text>
+      <text x="930" y="1098">213.49</text><text x="930" y="1148">213.50</text>
+      <text x="930" y="1198">213.51</text><text x="930" y="1248">213.52</text>
+    </g>
+  </g>
+</svg>

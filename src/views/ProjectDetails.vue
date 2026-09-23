@@ -5,7 +5,6 @@
   <div class="project-details">
     <!-- Project Title -->
     <!--<h1 class="project-title">{{ projectTitle }}</h1>-->
-
     <!-- Optional Back Button -->
     <div class="back-button">
       <router-link to="/resume" class="back-btn">Back to Projects</router-link>
@@ -23,9 +22,14 @@
 
   // Dynamically load the correct component based on the projectId
   const projectComponents = {
-    'Iccrea FineMese': defineAsyncComponent(() => import('../components/projects/IccreaFineMese.vue')),
+    'Iccrea Fine Mese': defineAsyncComponent(() => import('../components/projects/IccreaFineMese.vue')),
     'Portfolio Market Risk Monitor': defineAsyncComponent(() => import('../components/projects/PMRM.vue')),
+    'PMRM - Linux Service': defineAsyncComponent(() => import('../components/projects/PMRMLinux.vue')),
+    'Iccrea Spread Curves': defineAsyncComponent(() => import('../components/projects/ISC.vue')),
+    'Bloomberg ABS Automation': defineAsyncComponent(() => import('../components/projects/BLABS.vue')),
     'This website': defineAsyncComponent(() => import('../components/projects/Website.vue')),
+    'ITCH-engine': defineAsyncComponent(() => import('../components/projects/ITCHEngine.vue')),
+    'Gestione Separata Valuation Engine': defineAsyncComponent(() => import('../components/projects/GestioneSeparata.vue')),
     // Add more project mappings here
   };
 
@@ -40,20 +44,22 @@
     color: white;
     margin: 0;
     padding: 0;
-    height: 100%;
+    height: 100vh;
+    overflow-y: auto;
   }
 
   .project-details {
     padding: 20px;
-    max-width: 800px;
+    max-width: 80%;
     margin: 0 auto;
     font-family: 'Arial', sans-serif;
   }
 
   .project-title {
-    font-size: 2rem;
-    color: #f39c12;
-    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 1.7rem;
+    color: #fff;
+    text-align: center;
   }
 
   .project-description {
@@ -61,17 +67,6 @@
     color: #f5b550;
     line-height: 1.5;
   }
-
-  .tech-list {
-    list-style-type: none;
-    padding: 0;
-  }
-
-    .tech-list li {
-      font-size: 1rem;
-      color: white;
-      margin-bottom: 0.5rem;
-    }
 
   .project-media {
     margin-top: 2rem;

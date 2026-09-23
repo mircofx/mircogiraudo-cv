@@ -3,6 +3,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 //These below are components
 import Home from '@/views/Home.vue'
 import Resume from '@/views/Resume.vue'
+import Contacts from '@/views/Contacts.vue'
 import HelloWorld from '@/components/ProjectDrawer.vue'
 import ProjectDetails from '@/views/ProjectDetails.vue';
 
@@ -10,6 +11,7 @@ import ProjectDetails from '@/views/ProjectDetails.vue';
 const routes = [
   { path: '/', name: 'home', component: Home },
   { path: '/resume', name: 'resume', component: Resume },
+  { path: '/contacts', name: 'contacts', component: Contacts },
   { path: '/projectdrawer', name: 'projects', component: HelloWorld },
   {
     path: '/project/:projectId',  // This is the dynamic route for project details

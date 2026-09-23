@@ -108,10 +108,10 @@
     margin-top: 0.5rem; /* small gap between dot and line */
   }
 
-  .line.active {
-    transform: scaleY(1);
-    opacity: 1;
-  }
+    .line.active {
+      transform: scaleY(1);
+      opacity: 1;
+    }
 
   .timeline-content {
     flex: 1;

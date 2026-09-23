@@ -2,7 +2,7 @@
   <div class="cv-page">
     <div class="cv-content">
       <!-- Left column with CV highlights -->
-      <div class="cv-left col-md-6 p-5 d-flex flex-column justify-content-start">
+      <div class="cv-left p-5 d-flex flex-column justify-content-start">
         <h2 class="title-text">EMPLOYMENT EXPERIENCE</h2>
         <!-- Group 1 -->
         <ul class="bullet-group">
@@ -17,72 +17,48 @@
         <ul ref="typedElement" class="bullet-points">
           <li v-for="(item, index) in bulletPoints" :key="index"></li>
         </ul>
-        <h2 class="title-text">Expertise</h2>
+        <h2 class="title-text">Timeline</h2>
         <Timeline />
       </div>
 
       <!-- Right column with Download CV button -->
-      <div class="cv-right col-md-6 p-5 d-flex flex-column justify-content-start">
+      <div class="cv-right p-5 d-flex flex-column justify-content-start">
         <h2 class="title-text">RESUME</h2>
-        <a href="/public/CV Mirco Giraudo (EN) 2025.pdf" class="btn-resume" download>
+        <div>Click on the button to download my latest resume. </div>
+        <br />
+        <a :href="`${base}CV_Mirco_Giraudo_2026.pdf`" class="btn-resume" download>
           Mirco Giraudo
         </a>
         <br />
         <br />
-        <h2 class="title-text">PROJECTS</h2>
-        <ul class="bullet-group">
-          <li v-for="(item, index) in groupTwo" :key="'group2-' + index">
-            <span class="bullet-title"
-                  :ref="setGroupTwoRef(index)"
-                  @click="toggleDescription('groupTwo', index)"></span>
-            <p v-if="item.expanded" class="bullet-description">
-              {{ item.description }}
-              <!-- Place the Explore link on a new line -->
-              <span> <br/>
-                <router-link :to="'/project/' + encodeURIComponent(item.title)" class="explore-link">Explore</router-link>
-              </span>
-            </p>
-          </li>
-        </ul>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
+  const base = import.meta.env.BASE_URL
+
   import Timeline from '../components/Timeline.vue'
   import { onMounted, reactive } from 'vue'
   import Typed from 'typed.js'
 
   const groupOne = reactive([
-    { title: 'Quant Developer at Iccrea Banking S.p.A. (Rome, headquarters)', description: 'Built UIs using Vue.js and Tailwind.', expanded: false },
-    { title: 'Junior Developer at HRC srl. (Turin)', description: 'Led design and usability improvements.', expanded: false }
-  ])
-
-  const groupTwo = reactive([
-    { title: 'Portfolio Market Risk Monitor', description: 'Developed a proprietary rate risk and sensitivity monitoring program for Banking, HTC, HTCS portfolios (size €12bn for the parent company) as well as MarkToMarket and PnL of derivatives portfolios. The programs are complete with automatic exports, real-time data queries, interactive chart generation, historical data management and ISIN and TradeID details, as well as automatic detection of market anomalies.', expanded: false },
-    { title: 'Iccrea FineMese', description: 'The programme acquires data from various Excel spreadsheets and databases to automatically create reports and custom path files that are transmitted via Sterling IBM. It also produces e-mails with body, attachments and signatures via Interop Office libraries.', expanded: false },
-    { title: 'Iccrea Spread Curves', description: 'The programme generates the Iccrea Group\'s curves from the Italian Government, following the group\'s policy. The curves are generated daily, automatically, through a service installed on a server.', expanded: false },
-    { title: 'Bloomberg Automations for ABSs', description: 'Developed a program for automating the valuation of ABSs by exploiting Bloomberg\'s API for receiving data and simulating user interaction with the Bloomberg Launchpad through input automation.', expanded: false },
-    { title: 'This website', description: 'Created a resume website in Vue JavaScript with the use of Bootstrap5 and other components.', expanded: false }
+    { title: 'Quant Developer at Iccrea Banking S.p.A. (Rome, headquarters)', description: 'Designed and developed custom monitoring tools and automations for Front Office and Quantitative Models division.', expanded: true },
+    { title: 'Junior Developer at HRC srl. (Turin)', description: 'Designed and built MVC .NET web applications to input health reports, machinery, personal safety devices.', expanded: true }
   ])
 
   const typedRefs = {
-    groupOne: [],
-    groupTwo: []
+    groupOne: []
   }
 
   // Capture refs correctly using curried function
   const setGroupOneRef = index => el => {
     if (el) typedRefs.groupOne[index] = el
   }
-  const setGroupTwoRef = index => el => {
-    if (el) typedRefs.groupTwo[index] = el
-  }
 
   const toggleDescription = (group, index) => {
     if (group === 'groupOne') groupOne[index].expanded = !groupOne[index].expanded
-    if (group === 'groupTwo') groupTwo[index].expanded = !groupTwo[index].expanded
   }
 
   onMounted(() => {
@@ -98,16 +74,7 @@
     }
 
     initTyping(groupOne, typedRefs.groupOne)
-    initTyping(groupTwo, typedRefs.groupTwo)
   })
-
-  const generateDescription = (description, title) => {
-    // Create an Explore link
-    const exploreLink = `<router-link to="/project/${encodeURIComponent(title)}" class="explore-link">Explore</router-link>`;
-
-    // Add the Explore link to the description (or place it wherever you want in the string)
-    return description + ` <span class="explore-text">${exploreLink}</span>`;
-  }
 </script>
 
 <style scoped>
@@ -128,14 +95,15 @@
 
   .cv-content {
     display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
     justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
     padding: 5rem 2rem;
   }
 
-  .cv-left,
-  .cv-right {
+  .cv-left, .cv-right {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -221,7 +189,7 @@
     }
 
   .explore-link {
-    color: #4CBB17;
+    color: #4cbb17;
     text-decoration: none;
     font-weight: bold;
     cursor: pointer;
@@ -233,8 +201,18 @@
     }
 
   .explore-text {
-    color: #4CBB17; /* Adjust color if you want a specific one for the link */
+    color: #4cbb17;
     font-weight: bold;
   }
 
+  @media (max-width: 768px) {
+    .cv-content {
+      flex-direction: column;
+    }
+
+    .cv-left, .cv-right {
+      width: 100%;
+      padding: 0 !important;
+    }
+  }
 </style>

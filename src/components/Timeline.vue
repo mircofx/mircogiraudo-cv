@@ -14,6 +14,7 @@
 
         <!-- Content -->
         <div class="timeline-content">
+          <div class="date">{{ item.date }}</div>
           <span :ref="el => typedRefs[index] = el"
                 class="typed-title"></span>
           <p v-if="item.expanded" class="description">{{ item.description }}</p>
@@ -28,13 +29,13 @@
   import Typed from 'typed.js'
 
   const items = ref([
-    { title: 'Liceo Scientifico Carlo Cattaneo (High School)', description: 'Diploma in Applied Sciences.', expanded: true },
-    { title: 'Polytechnic of Turin - Mechanical Engineering', description: 'Worked on real-world projects.', expanded: true },
-    { title: 'WallStreet English School', description: 'Full-stack dev experience.', expanded: true },
-    { title: 'Got my first dev job', description: 'Full-stack dev experience.', expanded: true },
-    { title: 'Got my first dev job', description: 'Full-stack dev experience.', expanded: true },
-    { title: 'Got my first dev job', description: 'Full-stack dev experience.', expanded: true },
-    { title: 'Got my first dev job', description: 'Full-stack dev experience.', expanded: true }
+    { date: '2012 - 2017', title: 'Liceo Scientifico Carlo Cattaneo (High School)', description: 'Diploma in Applied Sciences.', expanded: true },
+    { date: '2017 - 2019', title: 'Polytechnic of Turin - Mechanical Engineering', description: 'Mechanical engineering.', expanded: true },
+    { date: '2019', title: 'WallStreet English School', description: 'C1', expanded: true },
+    { date: '2019 - 2023', title: 'University of Turin', description: 'Economics and Statistics for Enterprises', expanded: true },
+    { date: '05/2021 - 03/2022', title: 'Junior Software developer at HRC', description: 'Development of custom HSE manager', expanded: true },
+    { date: '04/2022 - now', title: 'Quant Developer at Iccrea Bank', description: 'Quant developer focused on risk managements and automation.', expanded: true },
+    { date: '01/2024 - 07/2024', title: 'Naples Fintech Lab', description: 'Financial Innovation lab, focused on developing AI solutions for banking sector. ', expanded: true }
   ])
 
   const typedRefs = []
@@ -57,7 +58,13 @@
 </script>
 
 <style scoped>
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+
   .timeline-container {
+    height: auto;
     padding: 2rem;
     background-color: black;
     color: white;
@@ -75,7 +82,7 @@
     display: flex;
     align-items: flex-start;
     position: relative;
-    margin-bottom: 0.5rem; /* spacing between dots */
+    margin-bottom: 0.5rem;
   }
 
   .timeline-marker {
@@ -87,6 +94,12 @@
     margin-right: 1rem;
   }
 
+  .date {
+    color: #888;
+    font-size: 0.85rem;
+    margin-bottom: 0.2rem;
+  }
+
   .dot {
     width: 12px;
     height: 12px;
@@ -96,26 +109,25 @@
     animation: growDot 0.3s ease-in-out;
   }
 
-  /* Line appears just below the dot and reaches the next one */
   .line {
     width: 2px;
     background-color: white;
-    height: 60px; /* adjust for your layout: 48 + 12px dot = 60px gap */
+    height: 60px;
     transform: scaleY(0);
     transform-origin: top;
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
     opacity: 0;
-    margin-top: 0.5rem; /* small gap between dot and line */
+    margin-top: 0.5rem;
   }
 
-  .line.active {
-    transform: scaleY(1);
-    opacity: 1;
-  }
+    .line.active {
+      transform: scaleY(1);
+      opacity: 1;
+    }
 
   .timeline-content {
     flex: 1;
-    padding-top: 0px;
+    padding-top: 0;
     margin-top: -7px;
   }
 
